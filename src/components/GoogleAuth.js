@@ -20,7 +20,7 @@ import { signIn, signOut } from '../actions/GoogleAuth';
 
     onAuthChange = (isSignedIn) => {
       if(isSignedIn) {
-        this.props.signIn();
+        this.props.signIn(this.auth.currentUser.get().getId());
       } else {
         this.props.signOut();
       }
